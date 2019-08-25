@@ -31,7 +31,7 @@
                                         <img class="record-image" src="{{ record.image.url }}">
                                         <div class="record-content">
                                             <p class="name">{{ record.name }}</p>
-                                            <p class="profile">Profile</p>
+                                            <p class="profile">{{ record.profile }} профиль</p>
                                             <p class="description">{{ record.description }}</p>
                                         </div>
                                     </li>
@@ -42,5 +42,6 @@
                 {% endfor %}
             </ul>
         </div>
+        <a href="{% url 'create_record' %}">Создать</a>
     </body>
 </html>
