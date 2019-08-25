@@ -9,6 +9,7 @@ class Record(models.Model):
     name = models.CharField(max_length=300)
     year = models.IntegerField(choices=available_years, default=datetime.now().year)
     image = models.ImageField(upload_to='images')
+    description = models.CharField(max_length=2000)
 
     def __str__(self):
         return self.name

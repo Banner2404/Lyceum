@@ -21,6 +21,6 @@ class HomeView(ListView):
 
 class CreateRecordView(CreateView):
     model = Record
-    fields = ['name', 'year', 'image']
+    fields = ['name', 'description', 'year', 'image']
     template_name = 'walk_of_fame/create_record.html'
     success_url = reverse_lazy('home')

@@ -97,9 +97,8 @@ h1, h2, p {
     display: inline-block;
     flex-shrink: 0;
     flex-grow: 0;
-    flex-basis: 182px;
+    width: 182px;
     height: 207px;
-    background-color: aqua;
     object-fit: cover;
 }
 
