@@ -9,6 +9,15 @@ class HomeView(ListView):
     model = Record
     template_name = 'walk_of_fame/home.html'
 
+    def get_queryset(self):
+        qs = Record.objects.order_by('year')
+        result = dict()
+        for record in qs:
+            if result.get(record.year) is None:
+                result[record.year] = []
+            result[record.year].append(record)
+        return sorted(result.items(), key=lambda x: x[0])
+
 
 class CreateRecordView(CreateView):
     model = Record

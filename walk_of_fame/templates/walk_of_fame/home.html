@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta encoding="utf-8">
-        <title>Home</title>
+        <title>Test</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'walk_of_fame/home.css'%}">
     </head>
     <body>
-        <a href="{% url 'create_record'%}">create new record</a>
-        {% for record in object_list %}
-            <p>{{ record.name }}</p>
-            <p>{{ record.year }}</p>
-            <img src="{{ record.image.url }}" alt="{{ record.name }}" height="300" width="300">
-        {% endfor %}
+        <header>
+            <div class="background-image"></div>
+            <div class="header-content">
+                <img class="header-logo" src="{% static 'walk_of_fame/symbol.png' %}"/>
+                <div class="header-labels">
+                    <h1>Аллея славы</h1>
+                    <h2>Лучшие студенты школы</h2>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="menu">
+                <p>Test</p>
+            </div>
+            <ul class="section-list">
+                {% for year in object_list %}
+                    <li>
+                        <div class="record-section">
+                            <h1 class="section-title">Выпуск {{ year.0 }}</h1>
+                            <ul class="record-list">
+                                {% for record in year.1 %}
+                                    <li class="record-row">
+                                        <img class="record-image" src="{{ record.image.url }}">
+                                        <div class="record-content">
+                                            <p class="name">{{ record.name }}</p>
+                                            <p class="profile">Profile</p>
+                                            <p class="description">DescriptionDescriptionDescriptionDescription DescriptionDescription DescriptionDescription DescriptionDescription DescriptionDescription</p>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </body>
 </html>

@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    height: 300px;
+}
+
+h1, h2, p {
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.background-image { 
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background-image: url("licey_2.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.background-image:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 101, 209, 0.5);
+}
+
+.header-content {
+    position: absolute;
+    display: flex;
+    padding-left: 200px;
+    height: 300px;
+    align-items: center;
+}
+
+.header-logo {
+    width: 150px;
+    height: 138px;
+}
+
+.header-labels {
+    width: 100%;
+}
+
+.header-labels h1,
+.header-labels h2 {
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.header-labels h1,h2 {
+    font-size: 40px;
+}
+
+.header-labels h2 {
+    font-size: 20px;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+
+.menu {
+    flex-basis: 200px;
+    flex-shrink: 0;
+}
+
+.section-list {
+    flex: auto;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.section-title {
+    color: #023397;
+    font-size: 30px;
+}
+
+.record-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.record-row {
+    display: flex;
+}
+
+.record-image {
+    display: inline-block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 182px;
+    height: 207px;
+    background-color: aqua;
+    object-fit: cover;
+}
+
+.record-content {
+    flex: auto;
+    display: inline-block;
+    padding-left: 37px;
+}
+
+.name {
+    font-size: 30px;
+    margin: 0;
+}
+
+.profile {
+    font-size: 20px;
+    margin-top: 9px;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+.description {
+    font-size: 22px;
+    margin: 0;
+}
+
+
+
+
