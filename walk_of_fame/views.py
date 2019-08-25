@@ -16,7 +16,7 @@ class HomeView(ListView):
             if result.get(record.year) is None:
                 result[record.year] = []
             result[record.year].append(record)
-        return sorted(result.items(), key=lambda x: x[0])
+        return sorted(result.items(), key=lambda x: x[0], reverse=True)
 
 
 class CreateRecordView(CreateView):

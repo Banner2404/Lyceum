@@ -3,9 +3,10 @@
     <head>
         <title>Test</title>
         {% load static %}
-        <link rel="stylesheet" href="{% static 'walk_of_fame/home.css'%}">
+        <link rel="stylesheet" href="{% static 'walk_of_fame/home.css' %}">
+        <script type="text/javascript" src="{% static 'walk_of_fame/home.js' %}"></script>
     </head>
-    <body>
+    <body id="tetet">
         <header>
             <div class="background-image"></div>
             <div class="header-content">
@@ -18,13 +19,17 @@
         </header>
         <div class="content">
             <div class="menu">
-                <p>Test</p>
+                <div class="floating-menu" id="menu">
+                    {% for year in object_list %}
+                        <a class="menu-item" href="{% url 'home' %}#section-{{ year.0 }}">Выпуск {{ year.0 }}</a>
+                    {% endfor %}
+                </div>
             </div>
             <ul class="section-list">
                 {% for year in object_list %}
                     <li>
                         <div class="record-section">
-                            <h1 class="section-title">Выпуск {{ year.0 }}</h1>
+                            <h1 class="section-title" id="section-{{ year.0 }}">Выпуск {{ year.0 }}</h1>
                             <ul class="record-list">
                                 {% for record in year.1 %}
                                     <li class="record-row">
