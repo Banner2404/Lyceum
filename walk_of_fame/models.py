@@ -15,7 +15,7 @@ class Record(models.Model):
     name = models.CharField(max_length=300)
     year = models.IntegerField(choices=available_years, default=datetime.now().year)
     image = models.ImageField(upload_to='images')
-    description = models.CharField(max_length=2000)
+    description = models.TextField(max_length=2000)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
     def __str__(self):

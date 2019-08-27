@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    background-color: rgba(240, 240, 240)
+}
+
+header {
+    width: 100%;
+    height: 260px;
+}
+
+h1, h2, p, a, label {
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.background-image { 
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    z-index: -100;
+}
+
+.background-image:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 101, 209, 0.5);
+}
+
+.header-content {
+    position: absolute;
+    display: flex;
+    padding-left: 200px;
+    height: 300px;
+    align-items: center;
+}
+
+.header-logo {
+    width: 150px;
+    height: 138px;
+}
+
+.header-labels {
+    width: 100%;
+}
+
+.header-labels h1,
+.header-labels h2 {
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.header-labels h1,h2 {
+    font-size: 40px;
+}
+
+.header-labels h2 {
+    font-size: 20px;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}
+
+.footer {
+    height: 100px;
+    background-color: #023397;
+    padding: 10px 10px 10px 200px;
+}
+
+.footer p,
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

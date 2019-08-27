@@ -1,59 +1,47 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Test</title>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'walk_of_fame/home.css' %}">
-        <script type="text/javascript" src="{% static 'walk_of_fame/home.js' %}"></script>
-    </head>
-    <body id="tetet">
-        <header>
-            <div class="background-image"></div>
-            <div class="header-content">
-                <img class="header-logo" src="{% static 'walk_of_fame/symbol.png' %}"/>
-                <div class="header-labels">
-                    <h1>Аллея славы</h1>
-                    <h2>Лучшие студенты школы</h2>
-                </div>
-            </div>
-        </header>
-        <div class="content">
-            <div class="menu">
-                <div class="floating-menu" id="menu">
-                    <div class="navigation-menu">
-                        {% for year in object_list %}
-                            <a class="menu-item" href="{% url 'home' %}#section-{{ year.0 }}">Выпуск {{ year.0 }}</a>
-                        {% endfor %}
-                    </div>
-                    <a href="{% url 'create_record' %}">
-                        <div class="create-link">
-                            <img class="create-link-icon" src="{% static 'walk_of_fame/create_record.png' %}">
-                            <p class="create-link-label">Добавить запись</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <ul class="section-list">
+{% extends 'walk_of_fame/layout.html' %}
+{% load static %}
+
+{% block header %}
+<title>Аллея славы</title>
+<link rel="stylesheet" href="{% static 'walk_of_fame/css/home.css' %}">
+<script type="text/javascript" src="{% static 'walk_of_fame/js/home.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="menu">
+        <div class="floating-menu" id="menu">
+            <div class="navigation-menu">
                 {% for year in object_list %}
-                    <li>
-                        <div class="record-section">
-                            <h1 class="section-title" id="section-{{ year.0 }}">Выпуск {{ year.0 }}</h1>
-                            <ul class="record-list">
-                                {% for record in year.1 %}
-                                    <li class="record-row">
-                                        <img class="record-image" src="{{ record.image.url }}">
-                                        <div class="record-content">
-                                            <p class="name">{{ record.name }}</p>
-                                            <p class="profile">{{ record.profile }} профиль</p>
-                                            <p class="description">{{ record.description }}</p>
-                                        </div>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </li>
+                    <a class="menu-item" href="{% url 'home' %}#section-{{ year.0 }}">Выпуск {{ year.0 }}</a>
                 {% endfor %}
-            </ul>
+            </div>
+            <a href="{% url 'create_record' %}">
+                <div class="create-link">
+                    <img class="create-link-icon" src="{% static 'walk_of_fame/images/create_record.png' %}">
+                    <p class="create-link-label">Добавить запись</p>
+                </div>
+            </a>
         </div>
-    </body>
-</html>
+    </div>
+    <ul class="section-list">
+        {% for year in object_list %}
+            <li>
+                <div class="record-section">
+                    <h1 class="section-title" id="section-{{ year.0 }}">Выпуск {{ year.0 }}</h1>
+                    <ul class="record-list">
+                        {% for record in year.1 %}
+                            <li class="record-row">
+                                <img class="record-image" src="{{ record.image.url }}">
+                                <div class="record-content">
+                                    <p class="name">{{ record.name }}</p>
+                                    <p class="profile">{{ record.profile }} профиль</p>
+                                    <p class="description">{{ record.description }}</p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

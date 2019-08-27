@@ -1,14 +1,42 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta encoding="utf-8">
-        <title>New record</title>
-    </head>
-    <body>
+{% extends 'walk_of_fame/layout.html' %}
+{% load static %}
+
+{% block header %}
+<title>Создать запись</title>
+<link rel="stylesheet" href="{% static 'walk_of_fame/css/create_record.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="main-content">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Submit">
+            <div class="main-info">
+                {{ form.non_field_errors }}
+                <div class="main-image">
+                </div>
+                <div class="main-labels">
+                    <div class="name-row">
+                        {{ form.name.errors }}
+                        <label for="{{ form.name.id_for_label}}">Имя:</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="info-row">
+                        {{ form.year.errors }}
+                        <label for="{{ form.year.id_for_label}}">Год выпуска:</label>
+                        {{ form.year }}
+                    </div>
+                    <div class="info-row">
+                        {{ form.profile.errors }}
+                        <label for="{{ form.profile.id_for_label}}">Профиль:</label>
+                        {{ form.profile }}
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                {{ form.description.errors }}
+                {{ form.description }}
+            </div>
+            <input class="submit-button" type="submit" value="Опубликовать">
         </form>
-    </body>
-</html>
+    </div>
+{% endblock %}

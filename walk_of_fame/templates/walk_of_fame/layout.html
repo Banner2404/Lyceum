@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'walk_of_fame/css/layout.css' %}">
+        {% block header %}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="background-image"></div>
+            <div class="header-content">
+                <img class="header-logo" src="{% static 'walk_of_fame/images/symbol.png' %}"/>
+                <div class="header-labels">
+                    <h1>Аллея славы</h1>
+                    <h2>Лучшие студенты школы</h2>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer class="footer">
+            <p>© ГУО "Лицей Ивацевичского района", 2019</p>
+            <a href="https://licey.rooivacevichi.gov.by">На главную</a>
+        </footer>
+    </body>
+</html>
