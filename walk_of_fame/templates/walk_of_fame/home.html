@@ -20,9 +20,17 @@
         <div class="content">
             <div class="menu">
                 <div class="floating-menu" id="menu">
-                    {% for year in object_list %}
-                        <a class="menu-item" href="{% url 'home' %}#section-{{ year.0 }}">Выпуск {{ year.0 }}</a>
-                    {% endfor %}
+                    <div class="navigation-menu">
+                        {% for year in object_list %}
+                            <a class="menu-item" href="{% url 'home' %}#section-{{ year.0 }}">Выпуск {{ year.0 }}</a>
+                        {% endfor %}
+                    </div>
+                    <a href="{% url 'create_record' %}">
+                        <div class="create-link">
+                            <img class="create-link-icon" src="{% static 'walk_of_fame/create_record.png' %}">
+                            <p class="create-link-label">Добавить запись</p>
+                        </div>
+                    </a>
                 </div>
             </div>
             <ul class="section-list">
@@ -47,6 +55,5 @@
                 {% endfor %}
             </ul>
         </div>
-        <a href="{% url 'create_record' %}">Создать</a>
     </body>
 </html>

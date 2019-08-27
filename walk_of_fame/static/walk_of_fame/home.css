@@ -15,7 +15,7 @@ h1, h2, p, a {
     position: absolute;
     width: 100%;
     height: 300px;
-    background-image: url("licey_2.png");
+    background-image: url("background.png");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
@@ -69,13 +69,16 @@ h1, h2, p, a {
 }
 
 .menu {
-    flex-basis: 200px;
+    width: 200px;
     flex-shrink: 0;
 }
 
 .floating-menu {
     margin: 30px;
-    padding: 10px 20px 10px 20px;
+}
+
+.navigation-menu {
+    padding: 10px 20px 15px 20px;
     background-color: #023397;
 }
 
@@ -86,6 +89,23 @@ h1, h2, p, a {
     font-size: 15px;
     color: white;
     text-decoration: none;
+}
+
+.create-link {
+    margin-top: 20px;
+    padding: 10px 20px 15px 20px;
+    background-color: #023397;
+}
+
+.create-link-icon {
+    width: 100%;
+}
+
+.create-link-label {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
 }
 
 .section-list {
@@ -142,7 +162,7 @@ h1, h2, p, a {
 
 .sticky {
     position: fixed;
-    width: 100px;
+    width: 140px;
     top: 0;
 }
 
