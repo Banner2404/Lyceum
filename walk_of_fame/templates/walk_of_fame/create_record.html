@@ -4,6 +4,7 @@
 {% block header %}
 <title>Создать запись</title>
 <link rel="stylesheet" href="{% static 'walk_of_fame/css/create_record.css' %}">
+<script type="text/javascript" src="{% static 'walk_of_fame/js/create_record.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -12,8 +13,7 @@
             {% csrf_token %}
             <div class="main-info">
                 {{ form.non_field_errors }}
-                <div class="main-image">
-                </div>
+                <img class="main-image" src="{% static 'walk_of_fame/images/profile_placeholder.png' %}" id="profile-image">
                 <div class="main-labels">
                     <div class="name-row">
                         {{ form.name.errors }}
@@ -36,6 +36,7 @@
                 {{ form.description.errors }}
                 {{ form.description }}
             </div>
+            <input type="file" name="image" id="{{ form.image.auto_id}}" hidden required>
             <input class="submit-button" type="submit" value="Опубликовать">
         </form>
     </div>
