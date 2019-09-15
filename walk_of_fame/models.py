@@ -12,6 +12,7 @@ class Profile(models.Model):
         return self.name
         
 class Record(models.Model):
+    active = models.BooleanField(default=False)
     name = models.CharField(max_length=300)
     year = models.IntegerField(choices=available_years, default=datetime.now().year)
     image = models.ImageField(upload_to='images')

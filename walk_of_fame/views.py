@@ -10,7 +10,7 @@ class HomeView(ListView):
     template_name = 'walk_of_fame/home.html'
 
     def get_queryset(self):
-        qs = Record.objects.order_by('year')
+        qs = Record.objects.filter(active=True).order_by('year')
         result = dict()
         for record in qs:
             if result.get(record.year) is None:
