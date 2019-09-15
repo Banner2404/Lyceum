@@ -23,4 +23,7 @@ class CreateRecordView(CreateView):
     model = Record
     fields = ['name', 'description', 'profile', 'year', 'image']
     template_name = 'walk_of_fame/create_record.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('success')
+
+def success_view(request):
+    return render(request, 'walk_of_fame/success.html')

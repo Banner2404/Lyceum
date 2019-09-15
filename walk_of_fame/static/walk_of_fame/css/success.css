@@ -1,0 +1,29 @@
+.wrapper {
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    color: #023397;
+}
+
+.hint {
+    text-align: center;
+}
+
+.home-button {
+    display: block;
+    -webkit-appearance: none;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 37px;
+    border: none;
+    background-color: #023397;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 12px;
+    text-decoration: none;
+}

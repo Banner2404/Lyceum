@@ -1,0 +1,15 @@
+{% extends 'walk_of_fame/layout.html' %}
+{% load static %}
+
+{% block header %}
+<title>Запись создана</title>
+<link rel="stylesheet" href="{% static 'walk_of_fame/css/success.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <h1 class="title">Спасибо!</h1>
+    <p class="hint">Ваша запись будет опубликована после проверки администратором.</p>
+    <a class="home-button" href="{% url 'home' %}">На главную</a>
+</div>
+{% endblock %}

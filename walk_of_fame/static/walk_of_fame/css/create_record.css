@@ -13,6 +13,7 @@
     height: 200px;
     background-color: red;
     cursor: pointer;
+    object-fit: cover;
 }
 
 .main-labels {
