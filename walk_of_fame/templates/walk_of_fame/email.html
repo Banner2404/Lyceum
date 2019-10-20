@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p>Запрос на создание новой записи в аллее славы:</p>
+        <p>Имя: <b>{{ object.name }}</b></p>
+        <p>Год выпуска: <b>{{ object.year }}</b></p>
+        <p>Профиль: <b>{{ object.profile }}</b></p>
+        <p>Описание: {{ object.description }}</p>
+        <a href="http://127.0.0.1:8000/admin/walk_of_fame/record/{{ object.pk }}/change/">Активировать запись</a>
+    </body>
+</html>
