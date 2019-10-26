@@ -1,1 +1,1 @@
-web: gunicorn walk-of-fame.wsgi --log-file -
+web: gunicorn web_project.wsgi --log-file -
