@@ -26,7 +26,7 @@ SECRET_KEY = 'lnr3ii0h*^_1nsfu7p^hkdg&#)!&g3-0+w(!*z-*@xvog=@)&y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['walk-of-fame.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['walk-of-fame.herokuapp.com', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -75,6 +75,7 @@ WSGI_APPLICATION = 'web_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 # DATABASES = {
 #     'default': {
