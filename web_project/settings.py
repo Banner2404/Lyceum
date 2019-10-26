@@ -25,7 +25,7 @@ SECRET_KEY = 'lnr3ii0h*^_1nsfu7p^hkdg&#)!&g3-0+w(!*z-*@xvog=@)&y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['walk-of-fame.herokuapp.com']
 
 
 # Application definition
