@@ -32,7 +32,7 @@ class CreateRecordView(CreateView):
     def form_valid(self, form):
         response = super(CreateRecordView, self).form_valid(form)
         message = render_to_string('walk_of_fame/email.html', {'object': self.object})
-        EmailThread(message).start()
+        #EmailThread(message).start()
         return response
 
 def success_view(request):
