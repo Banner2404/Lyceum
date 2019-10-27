@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from walk_of_fame.models import Record
 from django.core.mail import mail_admins
 from django.conf import settings
+from threading import Thread
 
 class HomeView(ListView):
     model = Record
@@ -31,8 +32,17 @@ class CreateRecordView(CreateView):
     def form_valid(self, form):
         response = super(CreateRecordView, self).form_valid(form)
         message = render_to_string('walk_of_fame/email.html', {'object': self.object})
-        mail_admins("Новая запись", "", html_message=message)
+        EmailThread(message).start()
         return response
 
 def success_view(request):
     return render(request, 'walk_of_fame/success.html')
+
+class EmailThread(Thread):
+
+    def __init__(self, message):
+        self.message = message
+        Thread.__init__(self)
+
+    def run(self):
+        mail_admins("Новая запись", "", html_message=self.message)
